@@ -111,11 +111,12 @@ app.get('/listSchools', async (req,res) => {
     }
 })
 
+const port = process.env.PORT || 3000;
 
 
 //starting the server abd creating the Schools table if it not exists
-app.listen(3000, async () => {
-    console.log('Server is running on port 3000');
+app.listen(port, async () => {
+    console.log(`Server is running on port ${port}`);
     await db.query(
         `
         CREATE TABLE IF NOT EXISTS Schools(
